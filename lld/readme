@@ -37,6 +37,7 @@ void test_c()
 将这几个文件编译成一个动态库：libtest.so
 $ gcc test_a.c test_b.c test_c.c -fPIC -shared -o libtest.so
 
+生成的libtest.so拷贝到系统lib中： cp libtest.so /lib
 2、动态库的链接
 在1、中，我们已经成功生成了一个自己的动态链接库libtest.so，下面我们通过一个程序来调用这个库里的函数。程序的源文件为：test.c。
 
