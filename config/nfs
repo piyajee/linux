@@ -1,0 +1,9 @@
+server:
+apt-get install nfs-kernel-server
+vi /etc/exports
+	--add info : /opt/FriendlyARM/mini2440/rootfs_qtopia_qt4 *(rw,sync,no_root_squash)
+service nfs-kernel-server start
+	--local test: mount -t nfs 127.0.0.1:/opt/FriendlyARM/mini2440/rootfs_qtopia_qt4 /mnt
+
+remote test:
+mount -t nfs 172.16.1.9:/opt/FriendlyARM/mini2440/rootfs_qtopia_qt4 /mnt -o nolock
