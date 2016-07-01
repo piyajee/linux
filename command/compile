@@ -4,3 +4,20 @@
 &set bashrc
 编辑/root/.bashrc 文件，在最后一行添加：
 export PATH=$PATH:/opt/FriendlyARM/toolschain/4.4.3/bin
+
+&compile gdb
+./configure --host=arm-linux --prefix="$PWD/../gdb"   --without-x --disable-gdbtk --disable-tui --without-included-regex --without-included-gettext CC=arm-linux-gcc
+
+&compile gdb CS mode
+--server: cd /gdbxx/gdb/gdbserver
+	./configure --host=arm-linux CC=arm-linux-gcc
+	make
+	then copy gdbserver to target system.
+	excute: ./gdbserver 127.0.0.1:1234 sample
+
+--client: cd /gdbxx
+	./configure --target=arm-linux --prefix="$PWD/../gdb"
+	make 
+	make install
+	then excute: /bin/arm-linux-gdb ./sample
+                     target remote 172.16.1.2:1234
