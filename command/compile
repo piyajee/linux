@@ -1,0 +1,6 @@
+&find the lib dictionary used by x-gcc
+--arm-linux-gcc --print-file-name=libc.a
+
+&set bashrc
+编辑/root/.bashrc 文件，在最后一行添加：
+export PATH=$PATH:/opt/FriendlyARM/toolschain/4.4.3/bin
