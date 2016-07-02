@@ -1,2 +1,3 @@
 &nm - list symbols from object files
+&objdump - display information from object files.
 &ldd - print shared library dependencies
