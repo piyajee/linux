@@ -3,8 +3,6 @@
 #include <sys/types.h>  
 #include <sys/wait.h>  
 #include <unistd.h>  
-#include <sys/reg.h>   /* For constants   
-                                   ORIG_EAX etc */  
 int main()  
 {  
    pid_t child;  
