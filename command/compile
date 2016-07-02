@@ -20,4 +20,6 @@ export PATH=$PATH:/opt/FriendlyARM/toolschain/4.4.3/bin
 	make 
 	make install
 	then excute: /bin/arm-linux-gdb ./sample
-                     target remote 172.16.1.2:1234
+		target remote 172.16.1.2:1234
+		file fileroad/sample
+	
